@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import { GlobalStyle, THEME } from './styles'
 import { 
   // useApiEpisodies,
-  useApiCharacters,
+  // useApiCharacters,
 } from './hooks/api'
 import React, { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'

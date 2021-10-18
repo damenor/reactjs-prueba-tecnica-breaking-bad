@@ -1,4 +1,4 @@
-import { useLocation, useHistory } from 'react-router'
+import { useLocation } from 'react-router'
 import styled from 'styled-components'
 
 // https://linguinecode.com/post/code-splitting-react-router-with-react-lazy-and-react-suspense
@@ -46,7 +46,6 @@ const DetailData = styled.div`
 
 const Detail = () => {
 
-  const history = useHistory()
   const { state } = useLocation<any>()
   const { character }: { character: ICharacter } = state
 
@@ -68,7 +67,6 @@ const Detail = () => {
         <span>{ character.status }</span>
       </DetailData>
       {/* { JSON.stringify(character) } */}
-      {/* <button onClick={history.goBack}>Back</button> */}
     </div>
   )
 }
