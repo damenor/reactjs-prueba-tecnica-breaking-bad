@@ -5,7 +5,7 @@ import Loading from './components/common/Loading'
 import Navbar from './components/Navbar'
 import { GlobalStyle, THEME } from './styles'
 import { 
-  useApiEpisodies,
+  // useApiEpisodies,
   useApiCharacters,
 } from './hooks/api'
 import React, { useLayoutEffect } from 'react'
@@ -27,11 +27,11 @@ const ScrollToTop = () => {
 const App = () => {
 
 
-  const [characters] = useApiCharacters({
-    limit: 5,
-    offset: 10,
-    isRandom: true
-  })
+  // const [characters] = useApiCharacters({
+  //   limit: 5,
+  //   offset: 10,
+  //   isRandom: true
+  // })
   
   // const [episodies] = useApiEpisodies()
 
