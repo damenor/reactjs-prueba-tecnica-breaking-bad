@@ -3,7 +3,7 @@ import {
   API_PARAM, 
   API_URL_CHARACTER_RANDOM,
 } from '../../constants/index'
-import { useFetch } from '../useFetch'
+import { useFetch } from '../utils/useFetch'
 import { getUrlWithParams } from '../../utils/http'
 
 type UseApiCharactersProps = {

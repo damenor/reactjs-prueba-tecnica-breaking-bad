@@ -13,9 +13,6 @@ const Button = styled.button`
   border-radius: 32px;
   border-radius: 4px;
   transition: all 0.2s ease; 
-  &:active {
-    transform: scale(0.96);
-  }
 `
 
 export default Button

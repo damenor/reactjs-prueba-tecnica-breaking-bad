@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
-import Logo from './Logo'
+import Logo from '../Logo'
 
-const LoadingContainer = styled.div<{isVisible: boolean}>`
-  z-index: 1001;
+type LoadingProps = { 
+  isVisible?: boolean
+}
+
+const LoadingContainer = styled.div<LoadingProps>`
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +23,7 @@ const LoadingContainer = styled.div<{isVisible: boolean}>`
   transform: ${({isVisible}) => isVisible ? 'scale(1)': 'scale(2)'};
 `
 
-const Loading = ({ isVisible }: {isVisible: boolean}) => {
+const Loading = ({ isVisible }: LoadingProps = { isVisible: true }) => {
   return (
     <LoadingContainer isVisible={isVisible}>
       <Logo />

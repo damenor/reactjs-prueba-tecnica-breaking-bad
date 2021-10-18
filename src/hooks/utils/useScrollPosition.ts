@@ -2,7 +2,7 @@ import { useRef, useLayoutEffect } from 'react'
 
 const isBrowser = typeof window !== `undefined`
 
-function getScrollPosition({ element, useWindow }: any) {
+const getScrollPosition = ({ element, useWindow }: any) => {
   if (!isBrowser) return { x: 0, y: 0 }
 
   const target = element ? element.current : document.body
@@ -16,7 +16,7 @@ function getScrollPosition({ element, useWindow }: any) {
 export const useScrollPosition = (effect: any, deps: any, element: any, useWindow: any, wait: any) => {
   const position = useRef(getScrollPosition({ useWindow }))
 
-  let throttleTimeout: NodeJS.Timeout | null  = null
+  let throttleTimeout: NodeJS.Timeout | null = null
 
   const callBack = () => {
     const currPos = getScrollPosition({ element, useWindow })

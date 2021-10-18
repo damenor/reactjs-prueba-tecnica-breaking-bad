@@ -44,7 +44,7 @@ const DetailData = styled.div`
   }
 `
 
-const Detail = () => {
+const CharacterDetailPage = () => {
 
   const { state } = useLocation<any>()
   const { character }: { character: ICharacter } = state
@@ -71,4 +71,4 @@ const Detail = () => {
   )
 }
 
-export default Detail
+export default CharacterDetailPage

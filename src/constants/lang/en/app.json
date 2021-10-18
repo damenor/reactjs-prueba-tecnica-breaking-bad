@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "links": [
+      { "path": "/", "label": "👫 Characters" },
+      { "path": "/episodies", "label": "📺 Episodies" },
+      { "path": "/quotes", "label": "💬 Quotes" }
+    ],
+    "language": "Select language"
+  }
+}

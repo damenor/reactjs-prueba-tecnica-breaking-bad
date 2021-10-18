@@ -1,4 +1,4 @@
-import { useFetch } from './../useFetch'
+import { useFetch } from './../utils/useFetch'
 import { API_URL_QUOTES } from '../../constants/index'
 
 type UseApiQuotesRandomByAuthorProps = {
