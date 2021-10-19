@@ -9,6 +9,8 @@ import ScrollToTop from './components/common/ScrollToTop'
 import { AppProvider } from './contexts/AppContext'
 
 const HomePage = React.lazy(() => import('./pages/HomePage'))
+const EpisodePage = React.lazy(() => import('./pages/EpisodesPage'))
+const QuotesPage = React.lazy(() => import('./pages/QuotesPage'))
 const CharacterDetailPage = React.lazy(() => import('./pages/CharacterDetailPage'))
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'))
 
@@ -24,7 +26,8 @@ const App = () => {
             <ScrollToTop />
             <Switch>
               <Route path="/" exact={true} component={HomePage} />
-              <Route path="/episodies" exact={true} component={HomePage} />
+              <Route path="/episodes" exact={true} component={EpisodePage} />
+              <Route path="/quotes" exact={true} component={QuotesPage} />
               <Route path="/character/:id" exact={true} component={CharacterDetailPage} />
               <Route component={NotFoundPage} />
             </Switch>

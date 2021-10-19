@@ -1,3 +1,4 @@
+import { ICharacter } from './../../interfaces/ICharacter'
 import { 
   API_URL_CHARACTERS, 
   API_PARAM, 
@@ -20,7 +21,7 @@ export const useApiCharacters = ({
   name,
   category,
   isRandom
-}: UseApiCharactersProps = {}) => {
+}: UseApiCharactersProps = {}): [data: ICharacter[] | undefined, error: Error | undefined] => {
 
   let url = isRandom ? API_URL_CHARACTER_RANDOM : API_URL_CHARACTERS
 
@@ -33,7 +34,7 @@ export const useApiCharacters = ({
 
   const endpoint = getUrlWithParams(url, params)
 
-  const { data, error } = useFetch(endpoint)
+  const { data, error } = useFetch<ICharacter[]>(endpoint)
   return [data, error]
 
 }

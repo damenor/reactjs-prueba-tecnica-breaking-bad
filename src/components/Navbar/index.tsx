@@ -6,7 +6,7 @@ import NavbarContainer from './NavbarContainer'
 import NavbarBrand from './NavbarBrand'
 
 const NAVBAR_LINKS = [
-  { path: '/episodies', label: '📺 Episodios' },
+  { path: '/episodes', label: '📺 Episodios' },
   { path: '/', label: '👫 Personajes' },
   { path: '/quotes', label: '💬 Frases' },
 ]

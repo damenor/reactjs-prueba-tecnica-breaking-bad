@@ -4,13 +4,12 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { API_URL_CHARACTERS } from '../constants'
 import Character from '../components/Character'
 import HomeWelcome from '../components/Home/HomeWelcome'
 import Slider from '../components/common/Slider'
-import { useFetch } from '../hooks/utils/useFetch'
 import { ICharacter } from '../interfaces/ICharacter'
 import { useAppContext } from '../hooks/contexts/useAppContext'
+import { useEffect } from 'react'
 
 const Container = styled.div`
   /* max-width: 1200px; */
@@ -22,21 +21,20 @@ const Container = styled.div`
 
 const HomePage = () => {
 
-  const { data } = useFetch<ICharacter[]>(`${API_URL_CHARACTERS}?limit=${10}`)
-
-  const context = useAppContext()
-
-  console.log({context})
-
+  const { characters } = useAppContext()
+  
   return (
     <Container>
       <HomeWelcome />
       <Slider.Item>
-        { data && data.map((character: ICharacter) => (
-          <Link key={character.char_id} to={{ pathname: `/detail/${character.name}`, state: { character } }}>
-            <Character {...character} />
-          </Link>    
-        ))}
+        { characters.map((character: ICharacter, index) => {
+          if(index > 10) return null
+          return (
+            <Link key={character.char_id} to={{ pathname: `/character/${character.name}`, state: { character } }}>
+              <Character {...character} />
+            </Link>    
+          )
+        })}
       </Slider.Item>
     </Container>
   )

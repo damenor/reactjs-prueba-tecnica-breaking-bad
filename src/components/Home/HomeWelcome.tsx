@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { useAppContext } from '../../hooks/contexts/useAppContext'
 
+import { useAppContext } from '../../hooks/contexts/useAppContext'
 import { mediaQueries } from '../../styles'
 
 const WelcomeContainer = styled.div`
@@ -10,6 +10,7 @@ const WelcomeContainer = styled.div`
   padding: 2rem;
   padding-top: 6rem;
   gap: 2rem;
+
   ${mediaQueries('lg')(`
     display: flex;
     align-items: center;
@@ -26,8 +27,6 @@ const WelcomeContainer = styled.div`
 
 const WelcomeImage = styled.img`
   width: 100%;
-  /* max-width: 450px; */
-  /* margin: 0 auto; */
 `
 
 const HomeWelcome = () => {
@@ -36,7 +35,7 @@ const HomeWelcome = () => {
 
   return (
     <WelcomeContainer>
-      <WelcomeImage src="images/welcome.png" alt="" />
+      <WelcomeImage src="images/welcome.png"/>
       <div>
         <h1>Breaking Bad</h1>
         <p>{ serie_description }</p>

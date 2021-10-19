@@ -2,7 +2,7 @@
   "navbar": {
     "links": [
       { "path": "/", "label": "👫 Personajes" },
-      { "path": "/episodies", "label": "📺 Episodios" },
+      { "path": "/episodes", "label": "📺 Episodios" },
       { "path": "/quotes", "label": "💬 Frases" }
     ],
     "language": "Seleccionar idioma"
