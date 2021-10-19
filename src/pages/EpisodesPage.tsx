@@ -9,6 +9,7 @@ const EpisodesPage = () => {
   useEffect(() => {
     (async() => await fetchEpisodes())()
     console.log({episodes})
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchEpisodes])
   
   return (
