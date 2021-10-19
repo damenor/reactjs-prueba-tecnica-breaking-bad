@@ -11,32 +11,27 @@ import HomeWelcome from '../components/Home/HomeWelcome'
 import Slider from '../components/common/Slider'
 import { ICharacter } from '../interfaces/ICharacter'
 import { useAppContext } from '../hooks/contexts/useAppContext'
+import { API_CATEGORIES } from '../constants'
+import Article from '../components/common/Article'
+import CharacterSlider from '../components/Character/CharacterSlider'
 
 const Container = styled.div`
-  /* max-width: 1200px; */
-  margin: 0 auto;
-  
-  /* padding: 2rem; */
   padding-top: ${({theme:{navbar}}) => `calc(${navbar.height} + 0)`};
 `
 
 const HomePage = () => {
 
-  const { characters } = useAppContext()
+  const { characters, labels} = useAppContext()
   
+  const characterOriginal = characters.filter(character => !character.category.includes(API_CATEGORIES.BETTER_CALL_SAUL))
+  const characterBetterCallSaul = characters.filter(character => character.category.includes(API_CATEGORIES.BETTER_CALL_SAUL))
+
   return (
     <Container>
       <HomeWelcome />
-      <Slider.Item>
-        { characters.map((character: ICharacter, index) => {
-          if(index > 10) return null
-          return (
-            <Link key={character.char_id} to={{ pathname: `/character/${character.name}`, state: { character } }}>
-              <Character {...character} />
-            </Link>    
-          )
-        })}
-      </Slider.Item>
+      <CharacterSlider title="Personajes serie original" characters={characterOriginal} />
+      <Article title="Better Call Saul" paragraph={labels.description_better_call_saul}/>
+      <CharacterSlider title="Personajes Better Call Saul" characters={characterBetterCallSaul} />
     </Container>
   )
 }

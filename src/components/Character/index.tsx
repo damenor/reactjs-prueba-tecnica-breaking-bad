@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ICharacter } from '../../interfaces/ICharacter'
+import Paragraph from '../common/Paragraph'
 
 // https://www.pinterest.es/pin/442126888418397931/visual-search/
 
@@ -29,11 +30,12 @@ const CharacterData = styled.div`
 `
 
 const CharacterName = styled.h2`
+  margin: 0;
   margin-top: 1rem;
   color: ${({theme:{color}}) => color.grey200};
   font-size: 1.5rem;
 `
-const CharacterNickname = styled.h3`
+const CharacterNickname = styled(Paragraph)`
   color: ${({theme:{color}}) => color.secondary};
   font-size: 0.9rem;
 `
