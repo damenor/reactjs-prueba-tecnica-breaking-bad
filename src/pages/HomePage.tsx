@@ -1,15 +1,8 @@
-//https://niemvuilaptrinh.medium.com/how-to-create-dropdown-and-15-dropdown-examples-for-website-cd38076ea9c
-// https://medium.com/@mariokandut/media-queries-with-styled-components-7a93e4c876f2
-
 // https://codepen.io/jastew/pen/ukayb
 
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
-import Character from '../components/Character'
 import HomeWelcome from '../components/Home/HomeWelcome'
-import Slider from '../components/common/Slider'
-import { ICharacter } from '../interfaces/ICharacter'
 import { useAppContext } from '../hooks/contexts/useAppContext'
 import { API_CATEGORIES } from '../constants'
 import Article from '../components/common/Article'

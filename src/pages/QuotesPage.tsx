@@ -9,6 +9,7 @@ const QuotesPage = () => {
   useEffect(() => {
     (async() => await fetchQuotes())()
     console.log({quotes})
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchQuotes])
   
   return (
