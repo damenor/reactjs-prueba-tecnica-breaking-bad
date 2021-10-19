@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router'
 import styled from 'styled-components'
 
-// https://linguinecode.com/post/code-splitting-react-router-with-react-lazy-and-react-suspense
+import { getRandomBackgroundImage } from '../constants'
 
 import { ICharacter } from '../interfaces/ICharacter'
 
@@ -54,7 +54,7 @@ const CharacterDetailPage = () => {
   return (
     <div>
       {/* <DetailBackground style={{ backgroundImage: `url(${character.img})` }} /> */}
-      <DetailBackground style={{ backgroundImage: `url(https://media.revistagq.com/photos/5ca5f059f552a1e82632e069/master/pass/breaking_bad_1118.jpg)` }} />
+      <DetailBackground style={{ backgroundImage: `url('/${getRandomBackgroundImage()}')` }} />
       <DetailData>
         <h2>{ character.name }</h2>
         <img src={character.img} alt="" />

@@ -1,11 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-
-const SLIDER_BACKGROUND_IMAGES = [
-  'https://estaticos-cdn.elperiodico.com/clip/9ba9d0d8-b6b1-4a8c-9391-a10d7e51dfbb_alta-libre-aspect-ratio_default_0.jpg',
-  'https://media.revistagq.com/photos/5ca605fba0ffb3663b01cb9c/16:9/w_1280,c_limit/breaking_bad_6491.jpg',
-  'https://media.revistagq.com/photos/5ca5f059f552a1e82632e069/master/pass/breaking_bad_1118.jpg',
-]
+import { getRandomBackgroundImage } from '../../../constants'
 
 const SliderContainer = styled.div`
   position: relative;
@@ -45,7 +40,7 @@ const Slider = ({ children, autoloop }: any) => {
   const sliderContentRef = useRef<any>(null)
   const intervalRef = useRef<any>(null)
 
-  const [bgImage, setBgImage] = useState(SLIDER_BACKGROUND_IMAGES[0])
+  const [bgImage, setBgImage] = useState(getRandomBackgroundImage())
   const [touchPosition, setTouchPosition] = useState<number | null>(null)
 
   useEffect(() => {
@@ -65,7 +60,7 @@ const Slider = ({ children, autoloop }: any) => {
   }, [autoloop])
 
   const prev = () => {
-    setBgImage(prevState => prevState === SLIDER_BACKGROUND_IMAGES[0] ? SLIDER_BACKGROUND_IMAGES[1]: SLIDER_BACKGROUND_IMAGES[0] )
+    setBgImage(getRandomBackgroundImage())
     const sliderContentRefCurrent = sliderContentRef?.current
     const sliderContentRefChildrens = sliderContentRefCurrent?.children || []
     if(sliderContentRefChildrens.length === 0) return
@@ -85,7 +80,7 @@ const Slider = ({ children, autoloop }: any) => {
   }
   
   const next = () => {
-    setBgImage(prevState => prevState === SLIDER_BACKGROUND_IMAGES[0] ? SLIDER_BACKGROUND_IMAGES[1]: SLIDER_BACKGROUND_IMAGES[0] )
+    setBgImage(getRandomBackgroundImage())
     const sliderContentRefCurrent = sliderContentRef?.current
     const sliderContentRefChildrens = sliderContentRefCurrent?.children || []
     if(sliderContentRefChildrens.length === 0) return

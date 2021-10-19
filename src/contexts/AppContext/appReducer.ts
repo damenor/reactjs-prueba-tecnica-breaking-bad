@@ -1,4 +1,4 @@
-import { getLanguageData } from './../../constants/lang/index'
+import { getLanguageData } from './../../constants/lang'
 import { IReducerAction } from '../../interfaces/IReducerAction'
 
 import { AppStateType } from './'

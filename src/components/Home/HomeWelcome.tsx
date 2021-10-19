@@ -35,7 +35,7 @@ const HomeWelcome = () => {
 
   return (
     <WelcomeContainer>
-      <WelcomeImage src="images/welcome.png"/>
+      <WelcomeImage src="images/welcome.png" alt="image walter white"/>
       <div>
         <h1>Breaking Bad</h1>
         <p>{ serie_description }</p>
