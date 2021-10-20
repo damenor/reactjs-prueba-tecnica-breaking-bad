@@ -5,12 +5,6 @@ import NavbarMenu from './NavbarMenu'
 import NavbarContainer from './NavbarContainer'
 import NavbarBrand from './NavbarBrand'
 
-const NAVBAR_LINKS = [
-  { path: '/episodes', label: '📺 Episodios' },
-  { path: '/', label: '👫 Personajes' },
-  { path: '/quotes', label: '💬 Frases' },
-]
-
 const Navbar = () => {
 
   const [isOpenMenu, toggleMenu] = useToggle(false)
@@ -24,7 +18,7 @@ const Navbar = () => {
         </NavbarBrand>
         <ButtonBurguer isActive={isOpenMenu} onClick={toggleMenu} />
       </NavbarContainer>
-      <NavbarMenu isOpen={isOpenMenu} links={NAVBAR_LINKS} onClickLink={toggleMenu}/>
+      <NavbarMenu isOpen={isOpenMenu} onClickLink={toggleMenu}/>
     </>
   )
 }

@@ -16,7 +16,6 @@ type NavbarMenuStyledProps = {
 
 type NavbarMenuProps = {
   isOpen: boolean
-  links: NavbarMenuLinkType[]
   onClickLink?: () => void
 }
 
