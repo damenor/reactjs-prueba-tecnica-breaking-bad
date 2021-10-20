@@ -1,5 +1,3 @@
-// https://codepen.io/jastew/pen/ukayb
-
 import styled from 'styled-components'
 
 import HomeWelcome from '../components/Home/HomeWelcome'

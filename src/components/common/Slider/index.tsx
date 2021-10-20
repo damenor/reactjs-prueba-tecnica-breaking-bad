@@ -34,8 +34,7 @@ const Slider: FC = ({ children }) => {
       <SliderContent 
         ref={sliderContentRef} 
         onTouchStart={handleTouchStart} 
-        onTouchMove={handleTouchMove}
-        onTransitionEnd={() => console.log('onTransitionEnd')}>
+        onTouchMove={handleTouchMove}>
         { children }
       </SliderContent>
       <SliderContainerButtons>
