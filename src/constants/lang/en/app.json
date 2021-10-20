@@ -11,6 +11,9 @@
     "title_original": "Characters serie original",
     "title_better_call_saul": "Characters Better Call Saul"
   },
+  "quotes": {
+    "search_by_author": "Search by author" 
+  },
   "character_detail": {
     "title_actor": "Actor",
     "title_professions": "Professions",

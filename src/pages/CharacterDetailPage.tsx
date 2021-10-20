@@ -3,12 +3,17 @@ import CharacterDetailContent from '../components/Character/CharacterDetailConte
 
 import CharacterDetailData from '../components/Character/CharacterDetailData'
 import Loading from '../components/Loading'
+import PageContainer from '../components/PageContainer'
 
 import { API_STATUS, EMOJI } from '../constants'
 import useApiCharacterAndQuote from '../hooks/api/useApiCharacterAndQuote'
 
 const CharacterDetailContainerImage = styled.div`
   position: relative;
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
 `
 
 const CharacterDetailStatus = styled.div`
@@ -17,15 +22,6 @@ const CharacterDetailStatus = styled.div`
   right: 1rem;
   font-size: 3rem;
 `
-
-const CharacterDetailContainer = styled.div`
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100vh;
-  padding-top: ${({theme:{navbar}}) => `calc(${navbar.height} + 2rem)`};
-`
-
 const CharacterDetailPage = () => {
 
   const { quote, fetchQuote, character } = useApiCharacterAndQuote()
@@ -33,7 +29,7 @@ const CharacterDetailPage = () => {
   if(!character) return <Loading isVisible={true}/>
 
   return (
-    <CharacterDetailContainer >
+    <PageContainer>
       <CharacterDetailContent>
         <CharacterDetailContainerImage>
           <img src={character?.img} alt="character"/>
@@ -43,7 +39,7 @@ const CharacterDetailPage = () => {
         </CharacterDetailContainerImage>
         <CharacterDetailData character={character} quote={quote} fetchQuote={fetchQuote}/>
       </CharacterDetailContent>
-    </CharacterDetailContainer>
+    </PageContainer>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { IQuote } from '../../interfaces/IQuote'
@@ -5,7 +6,7 @@ import Paragraph from '../common/Paragraph'
 
 type QuoteProps = {
   quote: IQuote
-  authorImage: string
+  authorData: { img: string, char_id: number }
 }
 
 const QuoteContainer = styled.div`
@@ -39,13 +40,17 @@ const QuoteData = styled.div`
   }
 `
 
-const Quote = ({ quote, authorImage }: QuoteProps) => (
+const Quote = ({ quote, authorData }: QuoteProps) => (
   <QuoteContainer key={quote.quote_id}>
-    <QuoteImage src={authorImage} alt="author" />
+    <QuoteImage src={authorData.img} alt="author" />
     <QuoteData>
       <img src="images/quote.svg" alt="quote" />
       <Paragraph colorText="grey300">{ quote.quote }</Paragraph>
-      <Paragraph colorText="grey600">{ quote.author }</Paragraph>
+      <Paragraph colorText="grey600">
+        <Link to={`/character/${authorData.char_id}`}>
+        { quote.author }
+        </Link>
+      </Paragraph>
     </QuoteData>
   </QuoteContainer>
 )

@@ -16,10 +16,6 @@ const CharacterDetailContent = styled.div`
     margin: 0;
     font-size: 2rem;
   }
-  img {
-    width: 100%;
-    border-radius: 12px;
-  }
   ${mediaQueries('lg')(`
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
