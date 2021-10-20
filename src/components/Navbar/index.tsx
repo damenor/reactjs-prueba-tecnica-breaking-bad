@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       <NavbarContainer isScrolled={isScrolled && !isOpenMenu}>
         <NavbarBrand to="/">
-          { isScrolled && <><span>Breaking</span> Bad</> }
+        <span>Breaking</span> Bad
         </NavbarBrand>
         <ButtonBurguer isActive={isOpenMenu} onClick={toggleMenu} />
       </NavbarContainer>

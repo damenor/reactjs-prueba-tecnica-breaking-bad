@@ -39,7 +39,7 @@ const NavbarMenuLanguageOptions = styled.div`
 const NavbarMenuLanguage = ({ options }: NavbarMenuLanguageProps) => {
 
   const { language, setLanguage, labels: { navbar } } = useAppContext()
-
+  
   return (
     <NavbarMenuLanguageContainer>
       <h2>{navbar.language}</h2>

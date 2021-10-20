@@ -3,6 +3,7 @@ import { API_URL_EPISODES, API_URL_QUOTES } from '../../constants'
 
 import { getLanguageData, LanguageOptionType, LANGUAGE_OPTIONS } from '../../constants/lang'
 import { useApiCharacters } from '../../hooks/api/useApiCharacters'
+import useLocalStorage from '../../hooks/utils/useLocalStorage'
 import { ICharacter } from '../../interfaces/ICharacter'
 import { IEpisode } from '../../interfaces/IEpisode'
 import { IQuote } from '../../interfaces/IQuote'
@@ -46,13 +47,18 @@ const fetchApi = async (url: string, callback: (data: any) => void) => {
 export const AppProvider: FC = ({ children }) => {
   
   const [characters = []] = useApiCharacters()
+  const [languageLocalStorage, setLanguageLocalStorage] = useLocalStorage('language', defaultState.language)
   
   const [state, dispatch] = useReducer<Reducer<AppStateType, IReducerAction>>(appReducer, {
     ...defaultState,
-    labels: getLanguageData(defaultState.language)
+    language: languageLocalStorage,
+    labels: getLanguageData(languageLocalStorage)
   })
   
-  const setLanguage = (language: LanguageOptionType) => dispatch({ type: APP_TYPE.SET_LANGUAGE, payload: language })
+  const setLanguage = (language: LanguageOptionType) => {
+    setLanguageLocalStorage(language)
+    dispatch({ type: APP_TYPE.SET_LANGUAGE, payload: language })
+  }
   
   const getCharacterByName = (name: string) => state.characters.filter(character => character.name === name)[0]
   
