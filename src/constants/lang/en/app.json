@@ -7,6 +7,10 @@
     ],
     "language": "Select language"
   },
+  "home": {
+    "title_original": "Characters serie original",
+    "title_better_call_saul": "Characters Better Call Saul"
+  },
   "character_detail": {
     "title_actor": "Actor",
     "title_professions": "Professions",

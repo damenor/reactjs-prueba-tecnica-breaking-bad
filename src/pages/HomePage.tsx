@@ -22,9 +22,9 @@ const HomePage = () => {
   return (
     <Container>
       <HomeWelcome />
-      <CharacterSlider title="Personajes serie original" characters={characterOriginal} />
+      <CharacterSlider title={labels.home.title_original} characters={characterOriginal} />
       <Article title="Better Call Saul" paragraph={labels.description_better_call_saul}/>
-      <CharacterSlider title="Personajes Better Call Saul" characters={characterBetterCallSaul} />
+      <CharacterSlider title={labels.home.title_better_call_saul} characters={characterBetterCallSaul} />
     </Container>
   )
 }
