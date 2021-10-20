@@ -26,7 +26,6 @@ const CharacterDetailContainer = styled.div`
   padding-top: ${({theme:{navbar}}) => `calc(${navbar.height} + 2rem)`};
 `
 
-
 const CharacterDetailPage = () => {
 
   const { quote, fetchQuote, character } = useApiCharacterAndQuote()
