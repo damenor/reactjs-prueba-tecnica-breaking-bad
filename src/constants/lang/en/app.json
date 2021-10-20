@@ -6,5 +6,11 @@
       { "path": "/quotes", "label": "💬 Quotes" }
     ],
     "language": "Select language"
+  },
+  "character_detail": {
+    "title_actor": "Actor",
+    "title_professions": "Professions",
+    "title_birthday": "Date of birth",
+    "button_quote": "Reload frase"
   }
 }

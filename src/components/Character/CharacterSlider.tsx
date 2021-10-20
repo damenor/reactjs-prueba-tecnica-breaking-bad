@@ -23,7 +23,7 @@ const CharacterSlider = ({ characters, title }: CharacterSliderProps) => {
       <Slider>
         { characters.map((character: ICharacter) => {
           return (
-            <Link key={character.char_id} to={{ pathname: `/character/${character.name}`, state: { character } }}>
+            <Link key={character.char_id} to={{ pathname: `/character/${character.char_id}`, state: { character } }}>
               <Character {...character} />
             </Link>    
           )

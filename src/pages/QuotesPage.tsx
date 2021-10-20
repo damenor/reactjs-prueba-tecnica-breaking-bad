@@ -34,7 +34,7 @@ const QuotesPage = () => {
       <Input placeholder="Search by author" onChange={onChangeSearch}/>
       <QuotesContainer>
         { quotesFiltered.map(quote => (
-          <Quote quote={quote} authorImage={getImageByAuthor(quote)}/>
+          <Quote key={quote.quote_id} quote={quote} authorImage={getImageByAuthor(quote)}/>
         )) }
       </QuotesContainer>
     </div>
